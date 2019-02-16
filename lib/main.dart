@@ -10,6 +10,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<String> _tasks = ['Surgery'];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,17 +20,18 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            RaisedButton(
-              onPressed: () {},
-              child: Text('Create Task'),
-            ),
-            Card(
-              child: Column(
-                children: <Widget>[
-                  Text('Food Paradise')
-                ],
+            Container(
+              margin: EdgeInsets.all(10.0),
+              child: RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    _tasks.add('task');
+                  });
+                },
+                child: Text('Create Task'),
               ),
             ),
+            ,
           ],
         ),
       ),
