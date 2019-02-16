@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './tasks.dart';
+import './task_control.dart';
 
 class TaskManager extends StatefulWidget {
   final String startingTask;
@@ -17,8 +18,14 @@ class _TaskManagerState extends State<TaskManager> {
 
   @override
   void initState() {
-    _tasks.add(widget.startingTask);
     super.initState();
+    _tasks.add(widget.startingTask);
+  }
+
+  void _addTasks (String task) {
+    setState(() {
+      _tasks.add(task);
+    });
   }
 
   @override
@@ -26,14 +33,7 @@ class _TaskManagerState extends State<TaskManager> {
     return Column(
       children: [ Container(
         margin: EdgeInsets.all(10.0),
-        child: RaisedButton(
-          onPressed: () {
-            setState(() {
-              _tasks.add('task');
-            });
-          },
-          child: Text('Create Task'),
-        ),
+        child: TaskControl(_addTasks),
       ),
     Tasks(_tasks)
     ]);

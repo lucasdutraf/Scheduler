@@ -9,13 +9,12 @@ class Tasks extends StatelessWidget {
     return Column(
       children: tasks
         .map((element) => Card(
-            child: Column(
-              children: <Widget>[
-                Text(element)
-              ],
-            ),
-          )
-        )
+          child: Column(
+            children: <Widget>[
+              Text(element)
+            ],
+          ),
+        ))
         .toList(),
     );
   }
