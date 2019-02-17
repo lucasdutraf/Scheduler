@@ -6,11 +6,11 @@ class TaskControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-          color: Colors.lightGreen,
-          onPressed: () {
-            addTask('new task');
-          },
-          child: Text('Create Task'),
-        );
+      color: Colors.lightGreen,
+      onPressed: () {
+        addTask('new task');
+      },
+      child: Text('Create Task'),
+    );
   }
 }

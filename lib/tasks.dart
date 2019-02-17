@@ -8,14 +8,14 @@ class Tasks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: tasks
-        .map((element) => Card(
-          child: Column(
-            children: <Widget>[
-              Text(element)
-            ],
-          ),
-        ))
-        .toList(),
+      .map((element) => Card(
+        child: Column(
+          children: <Widget>[
+            Text(element)
+          ],
+        ),
+      ))
+      .toList(),
     );
   }
 }
