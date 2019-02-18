@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Scheduler'),
         ),
-        body: TaskManager('Task test'),
+        body: TaskManager(),
       ),
     );
   }

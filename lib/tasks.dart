@@ -14,11 +14,24 @@ class Tasks extends StatelessWidget {
     );
   }
 
+  Widget _buildTaskList() {
+    Widget taskCard;
+    if (tasks.length > 0 ) {
+      taskCard = ListView.builder(
+        itemBuilder: _buildTaskItem,
+        itemCount: tasks.length,
+      );
+    }
+    else {
+      taskCard = Center(
+        child: Text('No tasks for you yet!')
+      );
+    }
+    return taskCard;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: _buildTaskItem,
-      itemCount: tasks.length,
-    );
+    return _buildTaskList();
   }
 }

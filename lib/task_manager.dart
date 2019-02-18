@@ -6,7 +6,7 @@ import './task_control.dart';
 class TaskManager extends StatefulWidget {
   final String startingTask;
 
-  TaskManager (this.startingTask);
+  TaskManager ({this.startingTask});
   @override
   State<StatefulWidget> createState() {
     return _TaskManagerState();
@@ -19,7 +19,9 @@ class _TaskManagerState extends State<TaskManager> {
   @override
   void initState() {
     super.initState();
-    _tasks.add(widget.startingTask);
+    if (widget.startingTask != null) {
+      _tasks.add(widget.startingTask);
+    }
   }
 
   void _addTasks (String task) {
