@@ -31,11 +31,14 @@ class _TaskManagerState extends State<TaskManager> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [ Container(
-        margin: EdgeInsets.all(10.0),
-        child: TaskControl(_addTasks),
-      ),
-    Tasks(_tasks)
-    ]);
+      children: [ 
+        Container (
+          margin: EdgeInsets.all(10.0),
+          child: TaskControl(_addTasks),
+        ),
+        Expanded (
+          child: Tasks(_tasks))
+      ]
+    );
   }
 }

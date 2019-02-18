@@ -6,7 +6,7 @@ class Tasks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: tasks
       .map((element) => Card(
         child: Column(
