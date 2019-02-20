@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/rendering.dart';
 
-import './task_manager.dart';
+import './pages/home.dart';
 
 void main() => runApp(MyApp());
 //debugPaintSizeEnabled = true; spacing of elements
@@ -17,12 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         accentColor: Colors.orange
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Scheduler'),
-        ),
-        body: TaskManager(),
-      ),
+      home: HomePage(), 
     );
   }
 }

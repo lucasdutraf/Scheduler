@@ -8,7 +8,16 @@ class Tasks extends StatelessWidget {
     return Card(
       child: Column(
         children: <Widget>[
-          Text(tasks[index])
+          Text(tasks[index]),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget> [
+              FlatButton (
+                child: Text('Edit task'),
+                onPressed: () => Navigator,
+              )
+            ],
+          )
         ],
       ),
     );
