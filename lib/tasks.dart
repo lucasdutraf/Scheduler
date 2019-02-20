@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './pages/task.dart';
+
 class Tasks extends StatelessWidget {
   final List<String> tasks;
   Tasks(this.tasks);
@@ -14,7 +16,12 @@ class Tasks extends StatelessWidget {
             children: <Widget> [
               FlatButton (
                 child: Text('Edit task'),
-                onPressed: () => Navigator,
+                onPressed: () => Navigator.push(
+                  context, 
+                  MaterialPageRoute (
+                    builder: (BuildContext context) => TaskPage()
+                  )
+                ),
               )
             ],
           )

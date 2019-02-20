@@ -8,8 +8,14 @@ class TaskPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Task detail'),
       ),
-      body: Center(
-        child: Text('Task detail'),
+      body: Column(
+        children: <Widget>[
+          Text('Edit Task'),
+          RaisedButton(
+            child: Text('Back'),
+            onPressed: () => Navigator.pop(context),
+          )
+        ]
       ),
     );
   }
