@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/rendering.dart';
 
-import './pages/home.dart';
+import './pages/tasks.dart';
 
 void main() => runApp(MyApp());
 //debugPaintSizeEnabled = true; spacing of elements
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         accentColor: Colors.orange
       ),
-      home: HomePage(), 
+      home: TasksPage(), 
     );
   }
 }
