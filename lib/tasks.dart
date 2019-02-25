@@ -1,14 +1,36 @@
 import 'package:flutter/material.dart';
 
+import './pages/task.dart';
+
 class Tasks extends StatelessWidget {
   final List<String> tasks;
-  Tasks(this.tasks);
+  final Function deleteTask;
+  
+  Tasks(this.tasks, {this.deleteTask});
 
   Widget _buildTaskItem (BuildContext context, int index) {
     return Card(
       child: Column(
         children: <Widget>[
-          Text(tasks[index])
+          Text(tasks[index]),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget> [
+              FlatButton (
+                child: Text('Edit task'),
+                onPressed: () => Navigator
+                .push<bool>(
+                  context, 
+                  MaterialPageRoute (
+                    builder: (BuildContext context) => TaskPage(tasks[index])
+                  )
+                )
+                .then((bool value) {
+                  if (value) deleteTask(index);
+                }),
+              )
+            ],
+          )
         ],
       ),
     );

@@ -30,6 +30,12 @@ class _TaskManagerState extends State<TaskManager> {
     });
   }
 
+  void _deleteTask (int index) {
+    setState(() {
+      _tasks.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +45,7 @@ class _TaskManagerState extends State<TaskManager> {
           child: TaskControl(_addTasks),
         ),
         Expanded (
-          child: Tasks(_tasks))
+          child: Tasks(_tasks, deleteTask: _deleteTask))
       ]
     );
   }
